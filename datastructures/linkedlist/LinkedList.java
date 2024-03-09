@@ -233,26 +233,22 @@ public class LinkedList {
     }
 
     public Node findKthFromEnd(int k){
-        if(head == null) return null;
+        Node slow = head;
+        Node fast = head;
 
-        int len = 0;
-
-        Node temp = head;
-        do{
-            len++;
-            temp = temp.next;
-
-        }while(temp != null);
-
-        if(k > len) return null;
-
-        int index = len - k;
-        Node kth = head;
-        for(int i = 0; i < index; i++){
-            kth = kth.next;
+        for(int i = 0; i < k; i++){
+            if (fast == null) {
+                return null;
+            }
+            fast = fast.next;
         }
 
-        return kth;
+        while(fast != null){
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        return slow;
     }
 
 }
