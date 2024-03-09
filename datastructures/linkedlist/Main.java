@@ -26,7 +26,6 @@ public class Main {
         System.out.println("\nLinked List:");
         myLinkedList.printList();
         System.out.println("\nMiddle node: " + myLinkedList.findMiddleNode().value);
-        System.out.println("\nThe length of my list: " + myLinkedList.getLen());
 
         myLinkedList.set(1, 44);
 
